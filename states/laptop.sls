@@ -27,6 +27,7 @@ install packages:
       - moby-engine
       - teams
       - wget
+      - cura
 start docker:
   service.running:
     - name: docker
@@ -40,3 +41,8 @@ extract terraform:
 tidy up:
   cmd.run:
     - name: rm terraform_*.* -f
+create docker user:
+  user.present:
+    - fullname: docker
+    - groups:
+      - docker
