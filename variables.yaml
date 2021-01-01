@@ -1,0 +1,14 @@
+packages:
+- kubeadm
+- kubectl
+
+services:
+- docker
+- kubelet
+- firewalld
+
+ports:
+- "6443/tcp"
+- "10250/tcp"
+
+token_file: join_token

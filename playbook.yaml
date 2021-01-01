@@ -1,0 +1,19 @@
+---
+    - name: Ansible Playbook
+      hosts: all
+      become: no
+      gather_facts: no
+      tasks:
+
+        - name: Ping target
+          ping:
+      
+        - name: Set timezone
+          timezone:
+            name: Europe/London
+
+        - name: Add epel repository
+          package:
+            name:
+              - epel-release
+            state: present
